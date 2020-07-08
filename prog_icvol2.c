@@ -23,7 +23,7 @@ int main(void){
 	//sorteia os vertices que terao valores negativos
 	for(int x=0; x<num;x++){
     		//sorteia os vertices 
-    		int aux=rand()%4;
+    		int aux=rand()%5;
     		vertices[aux]=vertices[aux]*-1;
 
     	}
