@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 void num_vertices(int* n){
-	*n=rand()%4;
+	*n=rand()%5;
 	//printf("%d\n",*n);
 }
 int main(void){
