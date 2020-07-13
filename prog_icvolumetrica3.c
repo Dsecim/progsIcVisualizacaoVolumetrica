@@ -5,7 +5,7 @@
 //#include "../Lib/lib.h"
 
 void cria_arq(FILE *,char *);
-int num_vertices(int* n);
+void num_vertices(int* n,int* ncol);
 void preencher(FILE *,char *);
 int main(){
   FILE *fp;
@@ -31,7 +31,7 @@ void preencher(FILE * fp,char * nome){
   scanf("%d",&nline);
   printf("Quantidade de colunas:");
   scanf("%d",&ncol);
-  float arr[nline][ncol];
+  float arr[nline+1][ncol+1];
   float val;
   //float val, coluna[ncol+2],linha[nline+2];
   /*+2 devido ao \0 de fim de vetor e uma necessidade percebida no algoritmo:
@@ -45,11 +45,11 @@ void preencher(FILE * fp,char * nome){
   fp = fopen(nome,"w");
   fprintf(fp,"%dx%d\n",nline,ncol);
 
-  for(int i=0;i<nline;i++){
-    num_vertices(&num);
+  for(int i=0;i<nline+1;i++){
+    num_vertices(&num,&ncol);
 
     //preenche uma linha com os valores(todos positivos)
-    for(int j=0;j<ncol;j++){
+    for(int j=0;j<ncol+1;j++){
        val=rand()%1000000;
        arr[i][j]=val/1000000;
      }
@@ -57,22 +57,17 @@ void preencher(FILE * fp,char * nome){
      //sorteia os que terao valores negativos
      for(int x=0; x<num;x++){
                         //sorteia os vertices
-                        int aux=rand()%ncol;
+                        int aux=rand()%ncol+1;
                         arr[i][aux]=arr[i][aux]*-1;
       }
-      //sorteia os que terao valores negativos
-     for(int x=0; x<num;x++){
-                        //sorteia os vertices
-                        int aux=rand()%ncol;
-                        arr[i][aux]=arr[i][aux]*-1;
-      }
-      for(int k=0;k<ncol;k++){
+     for(int k=0;k<ncol+1;k++){
         fprintf(fp,"%f\t",arr[i][k]);
       }
       fprintf(fp,"\n");
    }
    fprintf(fp, "#");
 }
-int num_vertices(int* n){
-  *n=rand()%4;
+void num_vertices(int* n, int* ncol){
+  *n=rand()%*ncol+1;
 }
+
