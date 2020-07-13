@@ -27,9 +27,9 @@ void cria_arq(FILE * fp, char * a){
 void preencher(FILE * fp,char * nome){
   int num,nline,ncol;
 
-  printf("Quantidade de linhas:");
+  printf("comprimento da matriz em quadrados:\t");
   scanf("%d",&nline);
-  printf("Quantidade de colunas:");
+  printf("largura da matriz em quadrados:\t");
   scanf("%d",&ncol);
   float arr[nline+1][ncol+1];
   float val;
