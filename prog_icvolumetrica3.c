@@ -63,7 +63,7 @@ void preencher(FILE * fp,char * nome){
      for(int k=0;k<ncol+1;k++){
         fprintf(fp,"%f\t",arr[i][k]);
       }
-      fprintf(fp,"\n");
+      fprintf(fp,"\n\n");
    }
    fprintf(fp, "#");
 }
