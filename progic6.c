@@ -30,7 +30,7 @@ void cria_arq(FILE * fp, char * a){
 void preencher(FILE * fp,char * nome){
   int num,nline,ncol,aux_index;
   float alfa;
-  aux_index=0;
+  //aux_index=0;
   printf("comprimento da matriz em quadrados:\t");
   scanf("%d",&nline);
   printf("largura da matriz em quadrados:\t");
@@ -60,9 +60,10 @@ void preencher(FILE * fp,char * nome){
 
     //preenche uma linha com os valores(todos positivos)
     for(int j=0;j<ncol+1;j++){
-       aux_index=aux_index+1;
+       //aux_index=aux_index+1;
        val=rand()%1000000;
-       arr[i][j]=(aux_index+val/1000000);
+       //arr[i][j]=(aux_index+val/1000000);
+       arr[i][j]=(val/1000000);
      }
 
      //sorteia os que terao valores negativos
